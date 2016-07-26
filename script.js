@@ -9,6 +9,8 @@ var book1 = {
   price: 0.99,
   selling_points : ['war is peace','freedom is slavery','ignorance is strength']
 }
+
+
 var album1 = {
   id: 'album1',
   name:'Lateralus',
@@ -18,8 +20,14 @@ var album1 = {
   selling_points: ['Tool','Lateralus','Metal']
 }
 
+var products = {
+  books: [book1],
+  albums: [album1]
+};
+
+
 function add_to_page(obj){
- // create the new product div
+  // create the new product div
   var $newProduct = $("<div/>")   // creates a div element
           .addClass(obj.category + ' product col-xs-6 col-sm-3 placeholder')
           .attr('id', obj.id);
@@ -62,10 +70,12 @@ function add_to_page(obj){
   });
 }
 
-
-add_to_page(book1);
-add_to_page(album1);
-
+//draw them all to page!
+$.each(products, function(k,v){
+  $.each(v, function(i) {
+    add_to_page(v[i]);
+  });
+});
 
 $('.nav #books').click(function(){
   $('.nav li').attr('class','');
@@ -87,4 +97,3 @@ $('.nav #all').click(function(){
   $('#all').addClass('active');
   $('.product').show();
 })
-
