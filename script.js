@@ -66,3 +66,25 @@ function add_to_page(obj){
 add_to_page(book1);
 add_to_page(album1);
 
+
+$('.nav #books').click(function(){
+  $('.nav li').attr('class','');
+  $('#books').addClass('active');
+  $('.album').hide();
+  $('.book').show();
+
+});
+
+$('.nav #albums').click(function(){
+  $('.nav li').attr('class','');
+  $('#albums').addClass('active');
+  $('.album').show();
+  $('.book').hide();
+})
+
+$('.nav #all').click(function(){
+  $('.nav li').attr('class','');
+  $('#all').addClass('active');
+  $('.product').show();
+})
+
