@@ -18,17 +18,51 @@ var album1 = {
   selling_points: ['Tool','Lateralus','Metal']
 }
 
+function add_to_page(obj){
+ // create the new product div
+  var $newProduct = $("<div/>")   // creates a div element
+          .addClass(obj.category + ' product col-xs-6 col-sm-3 placeholder')
+          .attr('id', obj.id);
 
-$('#book1 .name').text(book1.name)
-$('#book1 .picture_url').attr('src',book1.picture_url)
-$('#book1 .category').text(book1.category)
-$('#book1 .price').text(book1.price)
-$('#book1 .selling_points').text(book1.selling_points) // does this really work?
+  // add the product div
+  $('.container').append($newProduct)
+  var $product = $("#"+obj.id)
+
+  //create & add name div
+  $product.append($("<h2/>")
+           .addClass('name')
+           .text(obj.name));
+
+  //create and add picture
+  $product.append($("<img/>")
+           .addClass('picture_url')
+           .attr('src', obj.picture_url));
+
+  //create and add category
+  $product.append($("<div/>")
+           .addClass('category')
+           .text(obj.category));
+
+  //create and add price
+  $product.append($("<div/>")
+           .addClass('price')
+           .text(obj.price));
+
+  //create and add selling points
+  $product.append($("<ul/>")
+         .addClass('selling_points')
+         .html('<p>Selling Points:</p>'));
+
+  var sp = obj.selling_points;
+
+  $.each(sp, function(i){
+      var $li = $('<li/>')
+                .text(sp[i]);
+      $("#" + obj.id + ' ul').append($li)
+  });
+}
 
 
-$('#album1 .name').text(album1.name)
-$('#album1 .picture_url').attr('src',album1.picture_url)
-$('#album1 .category').text(album1.category)
-$('#album1 .price').text(album1.price)
-$('#album1 .selling_points').text(album1.selling_points) // does this really work?
+add_to_page(book1);
+add_to_page(album1);
 
