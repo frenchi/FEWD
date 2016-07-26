@@ -1,0 +1,55 @@
+.product {
+  background-color: #B7D3F2;
+  margin:10px 0px 0px 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 30px 5px 5px 30px;
+  min-width: 260px;
+  min-height: 500px;
+}
+
+
+.product h2{
+  margin-top: 0px;
+}
+
+
+.product_picture{
+  min-height: 100px;
+  min-width: 100px;
+  border-radius: 50%;
+}
+
+
+
+.navbar{
+  background-color: #79BEEE;
+  border-color: #84AFE6;
+}
+
+.navbar-default .navbar-nav>.active{
+  background-color: #84AFE6;
+}
+
+body {
+  background-color: #84AFE6;
+}
+
+.selling_points > p{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+.row {
+  padding-left: 50px
+}
+
+
+img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+
